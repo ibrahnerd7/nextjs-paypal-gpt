@@ -27,6 +27,7 @@ const db = client.db(ASTRA_DB_API_ENDPOINT, {
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
    try {
+    //@ts-expect-error - Text may not be available!
     const latestMessage = messages[messages?.length - 1]?.parts[0]?.text;
 
     let docContext = "";
@@ -51,6 +52,7 @@ export async function POST(req: Request) {
 
       docContext = JSON.stringify(docsMap);
     } catch (err) {
+      console.log(err)
       docContext = "";
     }
 
@@ -83,6 +85,7 @@ export async function POST(req: Request) {
   return result.toUIMessageStreamResponse();
 
   } catch (error) {
+    console.log(error)
   }
 
 }

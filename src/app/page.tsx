@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import paypaLogo from "../assets/logo.png";
-// @ts-ignore
 import { useChat } from "@ai-sdk/react";
 import Bubble from "./components/Bubble";
 import LoadingBubble from "./components/LoadingBubble";
@@ -9,7 +8,7 @@ import PromptSuggestionsRow from "./components/PromptSuggestionsRow";
 import { useState } from "react";
 
 const Home = () => {
-  const { messages, status, sendMessage, setMessages } = useChat();
+  const { messages, status, sendMessage, } = useChat();
 
   const [input, setInput] = useState("");
 
@@ -22,12 +21,12 @@ const Home = () => {
 
   const parseMarkDown = (text: string) => {
 	const toHTML = text
-		.replace(/^### (.*$)/gim, '<h3>$1</h3>') // h3 tag
-		.replace(/^## (.*$)/gim, '<h2>$1</h2>') // h2 tag
-		.replace(/^# (.*$)/gim, '<h1>$1</h1>') // h1 tag
-		.replace(/\*\*(.*)\*\*/gim, '<b>$1</b>') // bold text
-		.replace(/\*(.*)\*/gim, '<i>$1</i>'); // italic text
-	return toHTML.trim(); // using trim method to remove whitespace
+		.replace(/^### (.*$)/gim, '<h3>$1</h3>')
+		.replace(/^## (.*$)/gim, '<h2>$1</h2>')
+		.replace(/^# (.*$)/gim, '<h1>$1</h1>')
+		.replace(/\*\*(.*)\*\*/gim, '<b>$1</b>')
+		.replace(/\*(.*)\*/gim, '<i>$1</i>');
+	return toHTML.trim(); 
 }
 
   return (
