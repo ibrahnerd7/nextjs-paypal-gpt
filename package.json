@@ -6,22 +6,35 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seed": "ts-node ./src/scripts/loadDB.ts"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^2.0.16",
+    "@ai-sdk/react": "^2.0.17",
+    "@datastax/astra-db-ts": "^2.0.2",
+    "@langchain/community": "^0.3.53",
+    "@langchain/core": "^0.3.72",
+    "ai": "^5.0.17",
+    "dotenv": "^17.2.1",
+    "langchain": "^0.3.31",
+    "next": "15.4.7",
+    "openai": "^5.12.2",
+    "puppeteer": "^24.16.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.4.7"
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.4.7",
-    "@eslint/eslintrc": "^3"
-  }
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
